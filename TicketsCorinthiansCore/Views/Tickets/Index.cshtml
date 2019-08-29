@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TicketsCorinthiansCore.Entities.GameEntity>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Games</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamHome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamAway)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stadium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Championship)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamHome.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamAway.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stadium.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Championship.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Championship.Year)
+            </td>
+            <td>
+                <a asp-action="Buy" asp-controller="Tickets" asp-route-id="@item.Id">Buy Ticket</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

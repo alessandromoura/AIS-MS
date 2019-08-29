@@ -1,0 +1,41 @@
+﻿@model TicketsCorinthiansCore.Entities.GameEntity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GameEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TeamHomeId" class="control-label"></label>
+                <select asp-for="TeamHomeId" class ="form-control" asp-items="ViewBag.TeamHomeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamAwayId" class="control-label"></label>
+                <select asp-for="TeamAwayId" class ="form-control" asp-items="ViewBag.TeamAwayId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StadiumId" class="control-label"></label>
+                <select asp-for="StadiumId" class ="form-control" asp-items="ViewBag.StadiumId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChampionshipId" class="control-label"></label>
+                <select asp-for="ChampionshipId" class ="form-control" asp-items="ViewBag.ChampionshipId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
